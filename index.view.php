@@ -82,7 +82,6 @@
                 <h2 class="text-2xl font-semibold mb-2"><?=htmlspecialchars($game['title']); ?></h2>
                 <p class="mb-1">Fecha de lanzamiento: <?=htmlspecialchars($game['release_date']); ?></p>
                 <p class="mb-1">Calificación: <?=htmlspecialchars($game['rating']); ?></p>
-                <p>Autor: <?=htmlspecialchars($game['author']); ?></p>
             </div>
         <?php endforeach; ?>
     </div>
