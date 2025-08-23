@@ -77,13 +77,14 @@
   </header>
   <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 text-white">
-        <?php foreach ($result as $game): ?>
-            <div class="mb-6 p-4 bg-gray-700 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-2"><?=htmlspecialchars($game['title']); ?></h2>
-                <p class="mb-1">Fecha de lanzamiento: <?=htmlspecialchars($game['release_date']); ?></p>
-                <p class="mb-1">Calificación: <?=htmlspecialchars($game['rating']); ?></p>
-            </div>
-        <?php endforeach; ?>
+        <?php
+            foreach ($result as $game){
+                echo "<h2 class=\"text-2xl font-semibold mb-2\">" . htmlspecialchars($game['title']) . "</h2>";
+                echo "<p class=\"mb-1\">Fecha de lanzamiento: " . htmlspecialchars($game['release_date']) . "</p>";
+                echo "<p class=\"mb-1\">Calificación: " . htmlspecialchars($game['rating']) . "</p>";
+                echo "<p class=\"mb-1\">Autor: " . htmlspecialchars($game['author']) . "</p>";
+            }
+        ?>
     </div>
   </main>
 </div>
