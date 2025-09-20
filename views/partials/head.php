@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PokeAPI</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 </head>
@@ -18,12 +18,10 @@
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
-              <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="#" aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white">Dashboard</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
-              <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Reports</a>
+              <a href="/" aria-current="page" class="rounded-md <?= $currentPage === '/' ? 'bg-gray-900' : '' ?> px-3 py-2 text-sm font-medium">Home</a>
+              <a href="pokemon" class="rounded-md <?= $currentPage === '/pokemon' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' ?> px-3 py-2 text-sm font-medium">Pokedex</a>
+              <a href="about" class="rounded-md <?= $currentPage === '/about' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' ?> px-3 py-2 text-sm font-medium">About</a>
+              <a href="movies" class="rounded-md <?= $currentPage === '/movies' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white' ?> px-3 py-2 text-sm font-medium">Movies</a>
             </div>
           </div>
         </div>
@@ -69,24 +67,3 @@
       </div>
     </div>
   </nav>
-
-  <header class="relative bg-gray-800 after:pointer-events-none after:absolute after:inset-x-0 after:inset-y-0 after:border-y after:border-white/10">
-    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-white">Dashboard</h1>
-    </div>
-  </header>
-  <main>
-    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 text-white">
-        <?php foreach ($result as $game): ?>
-            <div class="mb-6 p-4 bg-gray-700 rounded-lg shadow-md">
-                <h2 class="text-2xl font-semibold mb-2"><?=htmlspecialchars($game['title']); ?></h2>
-                <p class="mb-1">Fecha de lanzamiento: <?=htmlspecialchars($game['release_date']); ?></p>
-                <p class="mb-1">Calificación: <?=htmlspecialchars($game['rating']); ?></p>
-                <p class="mb-1">Autor: <?=htmlspecialchars($game['author']); ?></p>
-            </div>
-        <?php endforeach; ?>
-    </div>
-  </main>
-</div>
-</body>
-</html>
