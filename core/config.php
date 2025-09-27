@@ -6,7 +6,8 @@ return [
             'host' => 'localhost',
             'dbname' => 'pwci_c1',
             'username' => 'root',
-            'password' => '12345'
+            'password' => '12345',
+            'charset' => 'utf8mb4',
         ]
     ]
 ];
