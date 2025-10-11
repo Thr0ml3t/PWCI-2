@@ -4,6 +4,9 @@ use Core\Router;
 $router = new Router();
 
 $router->add('/', 'controllers/home.php');
+$router->addMiddleware('/', 'middlewares/auth.php');
+$router->add('/login', 'controllers/login.php');
+$router->addMiddleware('/login', 'middlewares/auth.php');
 $router->add('/about', 'controllers/about.php');
 $router->add('/movies', 'controllers/movies.php');
 $router->add('/pokemon', 'controllers/pokemon.php');
